@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1485882329 source:d:\programming works - 2\graphics_test\main.cpp
+	<iostream>
+	<graphics.h>
+	<dos.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1458931361 source:k:\kali works\c++ programs\prog1\main.cpp
+	<iostream>
+	<conio.h>
+	<string.h>
+

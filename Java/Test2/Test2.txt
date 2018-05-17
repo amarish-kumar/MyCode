@@ -1,0 +1,43 @@
+import java.util.Scanner
+
+class Test2
+{
+	
+	public static void main(String[] args) {
+
+		Scanner mm = new Scanner(System.in);
+		int n, item, ptr;
+
+		System.out.print("Enter the number of elements of the array: ");
+		n = mm.nextInt();
+		int[] arr = new arr[n];
+		System.out.println("Enter the elements of the array: ");
+		
+		for(int i = 0; i < n; i++)
+		{
+			arr[i] = mm.nextInt();
+		}
+
+		for(i = 1; i < n; i++)
+		{
+			item = arr[i];
+			ptr = i - 1;
+
+			while(item < arr[ptr])
+			{
+				arr[ptr+1] = arr[ptr];
+				ptr--;
+			}
+			
+			arr[ptr+1] = item;
+		}
+	
+		System.out.println("The array after sorting is: ");
+		for(i = 0; i < n; i++)
+		{
+			System.out.println(arr[i]);
+		}
+
+	}
+};
+			
