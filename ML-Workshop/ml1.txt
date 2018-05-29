@@ -1,0 +1,30 @@
+ML started in 1959 (chess).
+
+Statical AI - 
+
+Big Data - Cloudera, HortonWork, Map-R.
+
+3V Concept - Volume, Velocity, and Variety.
+4V - Veracity (mean, mod, etc.)
+5V - Value
+
+A computer program is said to: 'learn' from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.
+
+Steps in ML:
+1. Collect data
+2. Prepare the input data - Clense, format etc.
+3. Analyse the input data - Plotting, finding features etc.
+4. Train the algorithm - Run the designed algorithm on training data (not for unsupervised)
+5. Test the algorithm - See to what extent it works on test data.
+6. Use it - If the testing is successful, use it with new data for which we are trying to find an answer.
+
+Major Classes:
+- Supervised - labelled data, training data sets
+Supervised algorithm is fed with a training data as well as the outputs which produces an inferred funcn and that is used for mapping new problems.
+
+- Unsupervised
+- Reinforcement
+
+
+
+

@@ -1,0 +1,91 @@
+- convert string to date series
+pd.to_datetime(pd.Series(['2017-04-01','2017-04-02','2017-04-03']))
+
+- Rename a specific column name
+df.rename(columns={'old_columnname':'new_columnname'}, inplace=True)
+
+- Flag duplicates
+df.duplicated()
+
+- Drop duplicates
+df = df.drop_duplicates()
+
+- Drop missing rows and columns having missing values
+df.dropna()
+
+- Replaces all missing values with 0 (or you can use any int or str)
+df.fillna(value= 0)
+
+- Check missing value condition and return Boolean value of true or false for each cell
+pd.isnull(df)
+
+
+df.index
+df.values
+df[column_name].unique()
+df.sort_values(by=['Column1','Column2'], ascending=[True, True])
+
+df[column_name]
+df[0:3]		# select/view by row number
+df.loc[0:3]	# index 0 to 3 in loc
+df.loc[0:3, ['col1','col2']]	# for specific column
+
+- selection by position
+df.iloc[0:2] # using range, first 2 rows
+df.iloc[2,3,6]	# specific position
+df.iloc[0:2, 0:2]	# first 2 rows and first 2 cols
+
+- selection without it being in the index
+print df.tx[1,1] # value from fisrt row and first col
+print df.tx[:,2] # all rows of column at 2nd pos
+
+- Faster alt to iloc to get scalar values
+print df.iat[1,1]
+
+- Transpose DataFrame
+df.T
+
+- Filter DF based on value condition for one column
+df[df['col_name']>7.5]
+
+- Filter DF based on a value condition on one column
+df[df['col_name'].isin(['condition_value1','condition_value2'])]
+
+df[df['col1']>10&(df['col2']>3)]
+df[df['col1']>10|(df['col2']>3)]
+
+- Pandas provide various facilities for easily combining together series, DateFrame, and Panel obj with various kinds of set logic for the indexes and relational algebra functionality in the case of join merge-type operations
+
+- Join:
+
+Inner join: produces only the set of records that match in both table A and table B
+pd.merge(df1,df2,on='emp_id',how='inner')
+
+Outer join: full outer join produces the set of all records in table A and Table B,
+with matching records from both sides where available. If there is no match, the missing side will contain null.
+pd.merge(df1,df2,on='emp_id',how='outer')
+
+
+### Matplotlib ###
+
+- using global functions:
+plt.bar - bar chart
+plt.scatter - scatter plot
+plt.boxplot - makes a box and whishker plot
+plt.hist - makes a histogram
+plt.plot - creates a line plot
+
+### Object Oriented ###
+
+You obtain an empty fig from a global factory, and then build the plot explicitly using the methods
+of the fig and the classes it contains. The fig is the top-level container for everything on a canvas. Axes is a container class for a specific plot. A fig may contain many Axes and/or subplots. Subplots are laid out in a grid within the fig. Axes can be placed anywhere on the Fig. We can use the subplots factory to get the fig and all the desired axes at once.
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+### Objective ###
+
+You will discover how to prepare your data for machine learning in python using scikit-learn. In this module
+you will know how to:
+- Rescale data.
+- Standardize data.
+- Normalize data.
+- Binarize data.
+
+# Need for data pre-processing
+You almost always need to pre-process your data. It is a required step. A difficulty is that different 
+algorithms make different assumptions about your data and may require different transformations. Further, 
+when you follow all of the rules and prepare your data, sometimes algorithms can deliver better results
+without pre-processing.
+
+# Data transforms
+- The scikit-learn lib provides two standard idioms for transforming data.
+- The scikit-learn doc has some info on how to use various different pre-porcessing methods:
+	- Fit and multiple transform
+	- Combined fit-and-transform
+
+The fit and multiple transform method is the preferred approach.
+
+fit(): to prep the params of the transform once on your data.
+Transform(): funcn on the same data to prep it for modelling and again on the test or validation dataset or 
+new data that you may see in the future.
+
+# Rescale Data
+- When your data is comprised of attrib with varying scales, many machine learning algos can benefit from
+rescaling the attrib to all have the same scale.
+- Often this is referred to as normalization and attrib are often rescaled into the range betn 0 and 1.
+This is useful for optimization algos used in the core of machine learning algos like gradient descent.
+- It is also useful for algos that weight inputs like regression and neural networks and algos that use dist
+measures like k-nearest neighbours.
+
+# Standard deviation:
+std = (x-xmin)/(xmax-xmin)
+scaled = std*(max-min)+min
+
+# Normalize Data
+Noramalize in sklearn refers to rescaling each obs (row) to have a length of 1 (called a unit norm or a vector
+with the length of 1 in linear algebra). This preprocessing method can be useful for sparse datasets (losts of 0s) wit attrib of varying scales when using algos that weight input values such as neural networks and algos that use distance measures such as KNN. You can normalize data in python with sklearn using the Normalizer class.
+
+# Binarize Data (make binary)
+You can transform your data using a binary threshold. All values above the threshold are marked 1 and all equal to or below are marked as 0. This is called binarizing your data or thresholding your data. It can be useful when you have probabilities that you want to make crisp values. It is also useful when feature engg and you want to add new features that indicate something meaningful. You can create new binary attib in python using sklearn with the Binarizer class.
+
+# Feature selection
+- The data features that you use to train your machine learning models have a huge influence on the performance you can achive. Irrelevant or partially relevent features can negatively impact model performance.
+- We will discover four automatic feature selection techniques that you can use to prepare your machine learning data in python with sklearn:
+	- Univariate selection
+	- Recursive feature elimination
+	- Principle component analysis
+	- Feature importance
+- Benefits of feature selection are:
+	- Reduces Overfitting: Less redundant data means less opportunity to make decisions based on noise.
+	- Improves Accuracy: Less misleading data means modelling accuracy imporves.
+	- Reduces Training time: Less data means that algo trains faster.
+
+# Recursive feature elimination
+The recursive feature elimination or RFE works by recursively removing attrib and building a model on theose attrib that remain. It uses the model of accuracy to identify which attrib (and combination of attrib) contribute the most to predict the target value.
+
+# Principal Component Analysis
+Principal Component Analysis (PCA) uses linear algebra to transform the dataset into compressed form. Generally, this is called a data reduction technique. A property of PCA is that you can choose the number of dimensions or principal components in the transformed result.

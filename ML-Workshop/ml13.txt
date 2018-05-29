@@ -1,0 +1,14 @@
+### Save and Load Machine Learning Models ###
+
+#Finalize your model with pickle
+- Pickle is the standard way of serializing obj in python. You can use the pickle1 operation to serialize your machine learning algos and save the serialized format to a file. Later you can load this to deserialize your model and use it to make new predictions.
+
+### Predictive modelling project ###
+
+- Any predictive modelling machine learning project can be broken down into six common tasks:
+	1. Define problem
+	2. Summarize data
+	3. Prepare data
+	4. Evaluate Algos
+	5. Improve Results
+	6. Present Results

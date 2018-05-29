@@ -1,0 +1,41 @@
+### Algorithms Overview ###
+Six classification algos that you can spot-check on your dataset.
+- Logistic Regression
+- Linear Discriminant Analysis
+- K-Nearest Neighbours
+- Naive Bayes
+- Classification and regression trees
+- Support Vector Machines
+
+# Logistic Regression
+Logistic regression assumes a gaussian distribution for the numeric inputs variables and can model binary classification problems. You can construct a logistic regression model using the LogisticRegression class.
+
+# Linear Discriminant Analysis
+Linear Discriminant Analysis or LDA is a statistical technique for binary and multiclass classification. It too assumes a gaussian distribution for the numerical input variables. You can construct an LDA model using the LinearDiscriminantAnalysis class.
+
+## Non-linear algos
+
+# k-Nearest Neighbours
+KNN uses a distance metric to find the k most similar instances in the training data for a new instance and takes the mean outcome of the neighbors as the prediction. You can construct a KNN model using the KNeighborsClassifier class.
+
+# Naive Bayes
+Naive Bayes calculates the probability of each class and the conditional probability of each class given each input value. These probabilities are estimated for new data and multiplied together, assuming that they are all independent (a simple or naive assumption). You can construct a Naive Bayes model using the GaussianNB class.
+
+# Classification and regression tree
+Classification and regression trees (CART or just decision trees) construct a binary tree from the training data. Split point are chosen greedily by evaluating each attrib and each value of each attrib in the training data in order to minimize a cost funcn (like the Gini index). 
+Class: from sklearn.tree import DecisionTreeClassifier
+
+* Low variance in data -> linear algo
+* High variance in data -> non-linear algo
+
+### Support Vector Machines ###
+Support vector machines (or SVM) seek a line that best separates two classes. Those data instances that are closest to the line that best separates the classes are called support vector and influence where the line is placed. SVM has been extended to support multiple classes. Of particular importance is the use of different kernel functions via the kernel parameter. A powerful Radial basis function is used by default.
+
+### Rgression algos spot-checking ###
+
+# Linear Regression
+It assumes that the input variables have a Gaussian distrib. It is also assumed that input variables are relevant to the output variables and that they are not highly correlated with each other (a problem called collinearity).
+
+# Ridge Regression
+It is an extension of linear regression where the loss funcn is modified to minimize the complexity of the model measured as the sum squared value of the coefficient values (also called the L2-norm).
+class: from sklearn.linear_model import Ridge

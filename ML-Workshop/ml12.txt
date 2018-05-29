@@ -1,0 +1,11 @@
+### K-Means ###
+- KMeans clustering is a type of unsupervised learning, which is used when you have unlabelled data (i.e. data without defined categories or groups). The goal of this algo is to find groups in the data, with the no. of groups represented by the variable k. The algo works iteratively to assign each data point to one of K groups based on the features that are provided. Data point are clustered based on feature similarity. The results of the k-means clustering algo are:
+	- The centroids of the K clusters, which can be used to label new data
+	- Labels for the training data (each data point is assigned to a single cluster)
+
+- Rather than defining groups before looking at the data, clustering allows you to find and analyse the groups that have formed organically. The 'Choosing k' section below describes how the no. of groups can be determined.
+- Each centroid of a cluster is a collection of feature values which define the resulting groups. Examining the centroid feature weights can be used to qualitatively interpret what kind of group each cluster represents.
+
+Low work order, labour cost
+Low travel cost
+High work order with no problem count

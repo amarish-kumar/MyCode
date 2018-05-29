@@ -1,0 +1,22 @@
+pandas supports several ways to handle data loading.
+
+- Text file data: read_csv, read_table
+- Structured data: (json, xml, html)
+- Excel (depends upon xird and openpyxl packages)
+
+- Commonly used file formats: csv, text file, and Excel.
+
+Reading:
+df = pd.read_csv('Data/mtcars.csv')
+df = pd.read_csv('Data/mtcars.txt', sep='\t')
+df = pd.read_excel('Data/mtcars.xlsx', 'Sheet2')
+
+Reading from multiple sheets of same Excel into different dataframes:
+xlsx = pd.ExcelFile('file.xls')
+sheet1_df = pd.read_data(xlsx,'Sheet1')
+
+Writing:
+index = False parameter will not write the index values, default is True
+df.to_csv('Data/mtcars_new.csv',index=False)
+df.to_csv('Data/mtcars_new.txt',sep='\t',index=False)
+df.to_excel('Data/mtcars_new.xlsx',sheet_name='Sheet1',index=False)

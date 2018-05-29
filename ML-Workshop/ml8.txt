@@ -1,0 +1,71 @@
+### Evaluate machine learning algos ###
+We must evaluate our machine learning algos on data that is not used to train the algo.
+- The evaluation is an estimate that we can use to talk about how well we think the algo may actually do in practice.
+- It is not a guarante of performance.
+- Once we estimate the performance of our algo, we can then retrain the final algo on the entire training dataset.
+
+# Techniques to split out training dataset
+There are four different techniques that we can use to split up our training dataset and create  useful estimates of performance for out machine learning algos.
+- Train and test sets.
+- k-fold cross validation.
+- leave one out cross validation.
+- repeated random test-train splits.
+
+# Split into train and test sets
+- Split the dataset into 67%/33% splits for training data and test data and evaluate the accuracy of a logistic regression model.
+- This algo evaluation technique is very fast.
+- It is ideal for large datasets (millions of records) where there is strong evidence that both splits of the data are representative of the underlying problem.
+
+# k-fold cross validation
+Cross validation is an approach that you can use to estimate the performance of a machine learning algo with less variance than a single train-test split. It works by splitting the dataset into k-parts (e.g. k = 5, k = 10). Each split of the data is called a fold. The algo is trained on k-1 folds with one held back and tested on the held back fold. This is repeated so that each fold of the dataset is given chance to be the held back test set. After running cross validation you end up with k different performance scores that you can summarize using a mean and a standard deviation.
+- Very fast for numerical data.
+
+# Leave one out cross validation
+You can configure cross validation so that the size of the fold is 1 (k is set to the number of obs in your dataset). This variation of cross validation is called leave-one-out cross validation.
+- Best for image processing.
+- Not good for numerical data.
+
+# Repeated random test-train split
+Another variation on k-fold cross validation is to create a reandom split of the data like the train/test split described above, but repeat the process of splitting and evaluation of the algo multiple times, like cross validation. This has the speed of using a train/test split and the reduction in variance in the estimated performance of k-fold cross validation. You can also repeat the process many more times as needed to improve the accuracy. A down side is that repetitions may include much of the same data in the train or the test split from run to run, introducing redundancy into the evaluation.
+
+######
+For 'indians-diabetes.data':
+
+							Accuracy 		Std-deviation
+train-test-split: 			75.5905511811 	0.0
+k-fold: 					76.951469583 	4.84105192457
+leave-one-out: 				76.8229166667 	42.1963403803
+repeated-random-split: 		76.4960629921 	1.6983980008
+######
+
+# Precision
+p = tp/(tp+tf)
+
+### Classification Metrics ###
+Classification problems are perhaps the most common type of machine learning problem and as such there are a myriad of metrices that can be used to evaluate predictions for these problems. We will review how to use the following metrices:
+- Classification accuracy
+- Logarithmic loss
+- Area under ROC curve
+- Confusion matrix
+- Classification report
+
+# Classification accuracy
+Classsification accuracy is the number of correct predictions made as a ratio of all predictions made. This is the most common evaluation metric for classification problems, it is also the most misused. It is really only suitable when there are an equal no. of obs in each class (which is rarely the case) and that all predictions and prediction errors are equally important, which is often not the case.
+
+# Logarithmic loss
+Logarithmic loss (or logloss) is a performance metric for evaluating the predictions of probabilities of membership to a given class. The scalar probability between 0 and 1 can be seen as a measure of confidence for a prediction by an algorithm. Predictions that are correct or incorrect are rewarded or punished proportionally to the confidence of the prediction.
+
+# Area Under ROC curve
+- Area under ROC curve (or AUC for short) is a performance metric for binary classification problems.
+- The AUC represents a model's ability to discriminate betn positive and negative classes.
+- An area of 1.0 represents a model that made all predictions perfectly. An area of 0.5 represents a model that is as good as random.
+- A binary classification problem is really a trade-o betn sensitivity and specificity.
+	- Sensitivity is the true positive rate also called the recall. It is the no. of instances from the positive (rst)  class that actually predicted correctly.
+	- Specificity, also called the true negative rate, is the no. of instances from the negative(second) class that were actually predicted correctly.
+
+# Confusion Matrix
+- The confusion matrix is a handy presentation of the accuracy of a model with two or more classes.
+- The table presents predictions on the x-axis and accuracy outcomes on the y-axis.
+
+# Classification report
+The sklearn lib provides a convenience report when working on classification problems to give you a quick idea of the accuracy of a model using a number of measures. The classification_report() funcn displays the precision, recall, f1-score and support for each class.

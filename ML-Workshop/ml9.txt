@@ -1,0 +1,41 @@
+### Linear Regression ###
+Linear regression analysis is a powerful technique used for predicting the unknows vanue of a variable (Dependent Variable) from the known value of another variables (independent variables).
+- A dependent variable (DV) is the variable to be predicted or explained in a regression model.
+- An independent vairable (IDV) is the variable related to the dependent variable in a regression equation.
+
+		y = a + bx
+
+- Y-intercept (a) is that value of the dependent variable (y) when the value of the independent variable (x) is zero. It is the point at which the line cuts the y-axis.
+- Slope (b) is the change in the dependent variable for a unit increase in the independent variable. It is the tangent of the angle made by the line with the x-axis.
+
+### Simple Linear Regression ###
+- Need a funcn that estimates y for a new x.
+- The simplest is a linear model.
+		
+		f(xi) = b0 + b1*xi
+
+- Want model to be as close to data as possible.
+want these to be small: |yi - f(xi)|
+equavalently want these to be small: (yi - f(xi))**2
+want all of them to be small: sum((yi - f(xi))**2) from i = 1 to n
+
+# R2 metric
+The R2 (or R Squared) metric provides an indication of the goodness of t of a set of predictions to the actual values. In statistical literature  this measure is called the coefficient of determination. This is a value between 0 and 1 for no-t and perfect t respectively.
+
+y = dependent variable
+y^ = predicted variable
+y- = mean of dependent variable
+yi = ith value of dependent variable
+yi^ = ith value of predicted dependent variable column
+
+R-squared = total sum of square residual (SSR)/ sum of square total (SST)
+
+# Mean Absolute Error
+The Mean Absolute Error (or MAE) is the sum of the absolute differences between predictions and actual values. It gives an idea of how wrong the predictions were. The measure gives the idea of the magnitude of the error, but no idea of the direction.
+
+		1/n * [sum(yi-yi^): i = 1 to n]
+
+# Mean Squared Error
+The Mean Squared Error (or MSE) is much like the mean absolute error in that it provides a gross idea of the magnitude of error. Taking the squared root of the mean squared error converts the units back to the original units of the output variable and can be meaningful for description and presentation. This is called the Root Mean Squared Error (or RMSE).
+
+		sqrt(1/n * [sum(yi - yi^)**2: i = 1 to n])

@@ -1,0 +1,48 @@
+### Univariate Plots ###
+
+- Histograms
+A fast way to get an idea of the distribution of each attribute is to look at histograms.
+Histograms group data into bins and provide you a count of the number of observations in each bin.
+From the shape of the bins you can quickly get a feeling for whether an attribute is Gaussian',
+skewed or even has an exponential distribution. It can also help you see possible outliers.
+
+- Density plots
+Density plots are another way of getting a quick idea of the distrib of each attrib. The plots look
+like an abstracted histogram with a smooth curve drawn through the top of each bin, much like your eye
+tried to do with the histograms. We can see the distrib for each attrib is clearer than the histograms.
+
+- Box and whisker plots
+Another useful way to review the distribution of each attrib is to use box and whisker plots or boxplots
+for short. Boxplots summarize the distrib of each attrib, drawing a line for the median (middle value)
+and a box around the 25th and 75th percentiles (the middle 50% of the data). The whiskers give an idea 
+of the spread of the data and dots outside of the whiskers show candidate outlier values(values that are
+1.5 times greater than the size of spread of the middle 50% of the data).
+
+- Correlation Matrix plot
+Correlation gives an indication of how related the changes are between two variables. If two variables
+change in the same direction they are positively correlated. If the change is opposite dir together (one 
+goes up, one goes down), then they are negatively correlated. You can calc the correlation matrix. You can then 
+plot the correlation matrix and get an idea of which variables have a high correlation with each other.
+
+- Scatter plot
+A scatter plot shows the relationship between two variables as dots in two dimensions, one axis for each 
+attrib. You can create a scatter plot for each pair of attrib in your data. Drawing all these scatter plots
+together is called a scatter plot matrix. Scatter plots are useful for spotting structured relationships between variables, like whether you could summarize the relationship betn two vars with a line. Attrib
+with structured reln may also be correlated and good candidates for removal from your dataset.
+
+### Types of ML ###
+
+Supervised learning:
+- labeled data
+- direct feedback
+- predict outcome/future
+
+Unsupervised Learning:
+- No labels/targets
+- No feedback
+- Find hidden struct in data
+
+Reinforcement learning:
+- Decision proces
+- Reward system
+- Learn series of actions
